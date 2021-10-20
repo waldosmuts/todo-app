@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100%;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  background: 0 0/100% no-repeat url(../images/bg-mobile-light.jpg), #e4e5f1;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 45px 25px 0 25px;
+}
+
+header h1 {
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+header button img {
+  height: 20px;
+}
+
+main {
+  margin: 40px 25px;
+}
+
+main .card {
+  background: #fafafa;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .checkbox {
+  width: 18px;
+  height: 18px;
+  background: #fafafa;
+  border: 1px solid #d2d3db;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 15px 0 20px;
+}
+
+main .checkbox:hover {
+  border-color: #484b6a;
+}
+
+main button.checked {
+  background: center/10px no-repeat url(../images/icon-check.svg), linear-gradient(135deg, #57ddff, #c058f3);
+  border: none;
+}
+
+main input[type="text"] {
+  border: none;
+  outline: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  padding: 18px 0;
+  background: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+main .todos {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .todos .todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 15px 0;
+  width: 100%;
+  border-bottom: 1px solid #d2d3db;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main .todos .todo .delete-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 20px 0 auto;
+  padding: 5px;
+}
+
+main .todos .todo .delete-todo img {
+  height: 12px;
+  width: 12px;
+}
+
+main .todos span.checked {
+  text-decoration: line-through;
+  color: #d2d3db;
+}
+
+main .todos .todo-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+main .todos .todo-footer span {
+  margin-left: 10px;
+}
+
+main .todos .todo-footer button {
+  margin-right: 20px;
+}
+
+main .todos .todo-footer span, main .todos .todo-footer button {
+  color: #9394a5;
+}
+
+main .filter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .filter button {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 16px 8px;
+  color: #9394a5;
+}
+
+main .filter .selected {
+  color: #3a7bfd;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer span {
+  font-size: 14px;
+  color: #9394a5;
+  margin-bottom: 35px;
+}
+
+footer .attribution {
+  font-size: 11px;
+}
+
+footer .attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=index.css.map */

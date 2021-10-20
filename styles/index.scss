@@ -1,0 +1,139 @@
+@import "../utils/normalize";
+@import "../utils/variables";
+@import "../utils/buttons";
+
+body {
+    font-family: $-f-jose;
+    font-size: $-fs-main;
+    background: 0 0 / 100% no-repeat url(../images/bg-mobile-light.jpg), $-c-l-background;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 45px 25px 0 25px;
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        font-size: 25px;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+    }
+    button {
+        img {
+            height: 20px;
+        }
+    }
+}
+
+main {
+    margin: 40px 25px;
+    .card {
+        background: $-c-l-card;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .checkbox {
+        width: 18px;
+        height: 18px;
+        background: $-c-l-card;
+        border: 1px solid $-c-l-text-check;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 15px 0 20px;
+        &:hover {
+            border-color: $-c-l-text;
+        }
+    }
+    button.checked {
+        background: center / 10px no-repeat url(../images/icon-check.svg), linear-gradient(135deg, $-g-checkbox);
+        border: none;
+    }
+    input[type="text"] {
+        border: none;
+        outline: none;
+        font-family: $-f-jose;
+        font-size: $-fs-main;
+        padding: 18px 0;
+        background: none;
+        flex-grow: 1;
+    }
+    .todos {
+        flex-direction: column;
+        .todo {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 15px 0;
+            width: 100%;
+            border-bottom: 1px solid $-c-l-text-check;
+            cursor: pointer;
+            user-select: none;
+            .delete-todo {
+                display: flex;
+                align-items: center;
+                margin: 0 20px 0 auto;
+                padding: 5px;
+                img {
+                    height: 12px;
+                    width: 12px;
+                }
+            }
+        }
+        span.checked {
+            text-decoration: line-through;
+            color: $-c-l-text-check;
+        }
+        .todo-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0;
+            span {
+                margin-left: 10px;
+            }
+            button {
+                margin-right: 20px;
+            }
+            span, button {
+                color: $-c-l-text-fade;
+            }
+        }
+    }
+    .filter {
+        justify-content: center;
+        button {
+            font-size: 14px;
+            font-weight: 700;
+            padding: 16px 8px;
+            color: $-c-l-text-fade;
+        }
+        .selected {
+            color: $-c-bright-blue;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 14px;
+        color: $-c-l-text-fade;
+        margin-bottom: 35px;
+    }
+    .attribution {
+        font-size: 11px;
+        a {
+            color: hsl(228, 45%, 44%);
+          }
+    }
+}

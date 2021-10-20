@@ -6,27 +6,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Todo app</title>
-  <link rel="stylesheet" href="./main.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles/index.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header>
+    <h1>Todo</h1>
+    <button aria-label="Switch To Dark Theme"><img src="./images/icon-moon.svg" alt="" aria-hidden="true"></button>
+  </header>
 
-  Todo
+  <main>
+    <form class="card">
+      <button type="button" class="checkbox"></button>
+      <input type="text" name="todo" id="todo-input" placeholder="Create a new todo...">
+    </form>
+    <div class="card todos">
+      <div class="todo checked">
+        <button class="checkbox checked"></button>
+        <span class="checked">Complete online Javascript course</span>
+        <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
+            aria-hidden="true"></button>
+      </div>
+      <div class="todo">
+        <button class="checkbox"></button>
+        <span>Jog around the park 3x</span>
+        <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
+            aria-hidden="true"></button>
+      </div>
+      <div class="todo">
+        <button class="checkbox"></button>
+        <span>10 minutes meditation</span>
+        <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
+            aria-hidden="true"></button>
+      </div>
+      <div class="todo">
+        <button class="checkbox"></button>
+        <span>Read for 1 hour</span>
+        <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
+            aria-hidden="true"></button>
+      </div>
+      <div class="todo">
+        <button class="checkbox"></button>
+        <span>Pick up groceries</span>
+        <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
+            aria-hidden="true"></button>
+      </div>
+      <div class="todo">
+        <button class="checkbox"></button>
+        <span>Complete Todo App on Frontend Mentor</span>
+        <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
+            aria-hidden="true"></button>
+      </div>
+      <div class="todo-footer">
+        <span><span id="items-left">5</span> items left</span>
+        <button>Clear Completed</button>
+      </div>
+    </div>
+    <div class="card filter">
+      <button id="filter-all" class="selected">All</button>
+      <button id="filter-active">Active</button>
+      <button id="filter-done">Completed</button>
+    </div>
+  </main>
 
-  <!-- Add dynamic number --> items left
-
-  All
-  Active
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <span>Drag and drop to reorder list</span>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/waldosmuts" target="_blank">Waldo Smuts</a>.
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="./scripts/jquery-3.6.0.js"></script>
+  <script src="./scripts/app.js"></script>
 </body>
 
 </html>
