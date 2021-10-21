@@ -17,7 +17,8 @@
 <body>
   <header>
     <h1>Todo</h1>
-    <button aria-label="Switch To Dark Theme"><img src="./images/icon-moon.svg" alt="" aria-hidden="true"></button>
+    <button id="switch-theme" aria-label="Switch To Dark Theme"><img src="./images/icon-moon.svg" alt=""
+        aria-hidden="true"></button>
   </header>
 
   <main>
@@ -26,37 +27,37 @@
       <input type="text" name="todo" id="todo-input" placeholder="Create a new todo...">
     </form>
     <div class="card todos">
-      <div class="todo checked">
+      <div class="todo checked" draggable="true">
         <button class="checkbox checked"></button>
         <span class="checked">Complete online Javascript course</span>
         <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
             aria-hidden="true"></button>
       </div>
-      <div class="todo">
+      <div class="todo" draggable="true">
         <button class="checkbox"></button>
         <span>Jog around the park 3x</span>
         <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
             aria-hidden="true"></button>
       </div>
-      <div class="todo">
+      <div class="todo" draggable="true">
         <button class="checkbox"></button>
         <span>10 minutes meditation</span>
         <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
             aria-hidden="true"></button>
       </div>
-      <div class="todo">
+      <div class="todo" draggable="true">
         <button class="checkbox"></button>
         <span>Read for 1 hour</span>
         <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
             aria-hidden="true"></button>
       </div>
-      <div class="todo">
+      <div class="todo" draggable="true">
         <button class="checkbox"></button>
         <span>Pick up groceries</span>
         <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
             aria-hidden="true"></button>
       </div>
-      <div class="todo">
+      <div class="todo" draggable="true">
         <button class="checkbox"></button>
         <span>Complete Todo App on Frontend Mentor</span>
         <button class="delete-todo" aria-label="Delete Todo"><img src="./images/icon-cross.svg" alt=""
@@ -70,7 +71,7 @@
     <div class="card filter">
       <button id="filter-all" class="selected">All</button>
       <button id="filter-active">Active</button>
-      <button id="filter-done">Completed</button>
+      <button id="filter-completed">Completed</button>
     </div>
   </main>
 

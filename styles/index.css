@@ -19,9 +19,32 @@ button {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
   background: 0 0/100% no-repeat url(../images/bg-mobile-light.jpg), #e4e5f1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header, main, footer {
+  max-width: 600px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 header {
@@ -34,7 +57,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 45px 25px 0 25px;
+  padding: 45px 25px 0 25px;
 }
 
 header h1 {
@@ -51,7 +74,7 @@ header button img {
 }
 
 main {
-  margin: 40px 25px;
+  padding: 40px 25px;
 }
 
 main .card {
@@ -70,20 +93,36 @@ main .card {
 main .checkbox {
   width: 18px;
   height: 18px;
-  background: #fafafa;
   border: 1px solid #d2d3db;
   border-radius: 50%;
   cursor: pointer;
   margin: 0 15px 0 20px;
+  position: relative;
 }
 
 main .checkbox:hover {
-  border-color: #484b6a;
+  background: linear-gradient(135deg, #57ddff, #c058f3);
+  border: none;
 }
 
-main button.checked {
+main .checkbox:hover::after {
+  content: "";
+  position: absolute;
+  background: #fafafa;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+}
+
+main .checkbox.checked {
   background: center/10px no-repeat url(../images/icon-check.svg), linear-gradient(135deg, #57ddff, #c058f3);
   border: none;
+}
+
+main .checkbox.checked::after {
+  display: none;
 }
 
 main input[type="text"] {
@@ -96,6 +135,7 @@ main input[type="text"] {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  color: #484b6a;
 }
 
 main .todos {
@@ -103,6 +143,8 @@ main .todos {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-shadow: 0px 15px 40px -17px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 15px 40px -17px rgba(0, 0, 0, 0.5);
 }
 
 main .todos .todo {
@@ -116,11 +158,16 @@ main .todos .todo {
   padding: 15px 0;
   width: 100%;
   border-bottom: 1px solid #d2d3db;
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+main .todos .todo span {
+  color: #484b6a;
 }
 
 main .todos .todo .delete-todo {
@@ -131,12 +178,26 @@ main .todos .todo .delete-todo {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 20px 0 auto;
-  padding: 5px;
 }
 
 main .todos .todo .delete-todo img {
   height: 12px;
   width: 12px;
+  pointer-events: none;
+}
+
+main .todos .todo.over {
+  position: relative;
+}
+
+main .todos .todo.over::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #3a7bfd;
 }
 
 main .todos span.checked {
@@ -156,6 +217,9 @@ main .todos .todo-footer {
           align-items: center;
   width: 100%;
   padding: 20px 0;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 main .todos .todo-footer span {
@@ -164,6 +228,10 @@ main .todos .todo-footer span {
 
 main .todos .todo-footer button {
   margin-right: 20px;
+}
+
+main .todos .todo-footer button:hover {
+  color: #484b6a;
 }
 
 main .todos .todo-footer span, main .todos .todo-footer button {
@@ -183,8 +251,12 @@ main .filter button {
   color: #9394a5;
 }
 
+main .filter button:hover {
+  color: #484b6a;
+}
+
 main .filter .selected {
-  color: #3a7bfd;
+  color: #3a7bfd !important;
 }
 
 footer {
@@ -201,6 +273,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 20px;
 }
 
 footer span {
@@ -210,10 +283,139 @@ footer span {
 }
 
 footer .attribution {
-  font-size: 11px;
+  font-size: 12px;
+  color: #9394a5;
 }
 
 footer .attribution a {
-  color: #3e52a3;
+  color: #3a7bfd;
+  text-decoration: none;
+}
+
+.dark {
+  background: 0 0/100% no-repeat url(../images/bg-mobile-dark.jpg), #161722;
+}
+
+.dark .card {
+  background: #25273c;
+}
+
+.dark .checkbox {
+  background: #25273c;
+  border-color: #393a4c;
+}
+
+.dark .checkbox:hover::after {
+  background: #25273c;
+}
+
+.dark input[type="text"] {
+  color: #cacde8;
+}
+
+.dark .todos {
+  -webkit-box-shadow: 0px 15px 52px -17px black;
+          box-shadow: 0px 15px 52px -17px black;
+}
+
+.dark .todos .todo {
+  border-color: #393a4c !important;
+}
+
+.dark .todos .todo span {
+  color: #cacde8;
+}
+
+.dark .todos .todo span.checked {
+  color: #393a4c;
+}
+
+.dark .todos .todo:hover span:not(.checked) {
+  color: #e4e5f1;
+}
+
+.dark .todos .todo-footer span, .dark .todos .todo-footer button {
+  color: #4d5066;
+}
+
+.dark .todos .todo-footer button:hover {
+  color: #e4e5f1;
+}
+
+.dark .filter button {
+  color: #4d5066;
+}
+
+.dark .filter button:hover {
+  color: #e4e5f1;
+}
+
+.dark footer span {
+  color: #4d5066;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+    background: 0 0/100% no-repeat url(../images/bg-desktop-light.jpg), #e4e5f1;
+  }
+  body.dark {
+    background: 0 0/100% no-repeat url(../images/bg-desktop-dark.jpg), #161722;
+  }
+  header {
+    padding: 80px 30px 0 30px;
+  }
+  header h1 {
+    font-size: 38px;
+    letter-spacing: 17px;
+  }
+  header button img {
+    height: 28px;
+  }
+  main {
+    position: relative;
+    padding: 40px 30px 30px;
+  }
+  main .card {
+    margin-bottom: 20px;
+  }
+  main .card #todo-input {
+    padding: 24px 0;
+  }
+  main .checkbox {
+    width: 24px;
+    height: 24px;
+    margin: 0 25px 0 25px;
+  }
+  main input[type="text"] {
+    font-size: 18px;
+  }
+  main .todos .todo {
+    padding: 20px 0 !important;
+  }
+  main .todos .todo .delete-todo {
+    display: none !important;
+  }
+  main .todos .todo:hover .delete-todo {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  main .todos .todo-footer span, main .todos .todo-footer button {
+    font-size: 14px;
+  }
+  main .filter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, calc(-100% + 15px));
+            transform: translate(-50%, calc(-100% + 15px));
+  }
+  footer span {
+    margin-bottom: 10px;
+  }
+  footer .attribution {
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
